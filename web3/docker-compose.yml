@@ -1,0 +1,19 @@
+version: '3.5'
+services:
+  web:
+    image: nginx:alpine
+    container_name: web3
+    volumes:
+      - ./1.conf:/etc/nginx/conf.d/1.conf
+      - ./index.html:/usr/share/nginx/html/index.html
+    ports:
+      - "8083:80"
+    environment:
+      - NGINX_PORT=80
+    command: /bin/sh -c "exec nginx -g 'daemon off;'"
+    networks:
+      - default
+networks:
+  default:
+    name: haproxy
+    

@@ -1,0 +1,16 @@
+version: '3.5'
+services:
+  haprx:
+    image: haproxy
+    container_name: haproxy
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    ports:
+      - "8084:80"
+      - "1936:1936"
+    networks:
+      - default
+networks:
+  default:
+    name: haproxy
+    

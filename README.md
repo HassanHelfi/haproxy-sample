@@ -25,6 +25,8 @@ docker compose up
 5.
 ```
 curl 127.0.0.1:8084
+or
+open 127.0.0.1:8084 in browser
 ```
-or open 127.0.0.1:8084 in browser
+
  
